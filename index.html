@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Piazza — Pistone srls</title>
-<meta name="description" content="Piazza digitale Pistone srls — accesso rapido alle pagine del sistema.">
+<meta name="description" content="Piazza digitale Pistone srls — le 4 divisioni del gruppo in un unico spazio.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,6 @@ body{
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 
-/* ---------- Fondo: bagliori teal tenui + griglia tecnica ---------- */
 .ambient{position:fixed;inset:0;z-index:-2;pointer-events:none;
   background:
     radial-gradient(720px 460px at 82% -8%, rgba(4,162,156,.08), transparent 60%),
@@ -143,10 +142,8 @@ h1 .accent{color:var(--teal)}
   transition:box-shadow .45s ease, border-color .45s ease, transform .45s ease;
   animation:rise .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s);
 }
-/* faro teal che segue il mouse */
 .card::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .4s;
   background:radial-gradient(360px circle at var(--mx,50%) var(--my,20%), rgba(4,162,156,.12), transparent 62%);border-radius:var(--r)}
-/* anello di selezione */
 .card::after{content:"";position:absolute;inset:0;border-radius:var(--r);pointer-events:none;z-index:4;
   opacity:0;transition:opacity .35s;box-shadow:0 0 0 1.5px var(--teal), 0 0 40px -4px rgba(4,162,156,.35)}
 .card:is(:hover,:focus-visible){border-color:transparent;
@@ -159,7 +156,7 @@ h1 .accent{color:var(--teal)}
 .card-media img{width:100%;height:100%;object-fit:cover;
   transform:scale(1.02);transition:transform 1.4s cubic-bezier(.2,.7,.2,1), filter .6s}
 .card:is(:hover,:focus-visible) .card-media img{transform:scale(1.1);filter:brightness(1.02) saturate(1.05)}
-.card-media::after{ /* riflesso diagonale */
+.card-media::after{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
   background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.5) 50%,transparent 60%);
   transform:translateX(-120%);transition:transform .9s ease}
@@ -181,7 +178,7 @@ h1 .accent{color:var(--teal)}
 .card:is(:hover,:focus-visible) .premi{opacity:1;transform:none}
 
 .card-body{position:relative;z-index:2;padding:22px;display:flex;flex-direction:column;flex:1}
-.card-body h3{font-family:var(--font-d);font-weight:500;font-size:1.02rem;letter-spacing:.05em;
+.card-body h3{font-family:var(--font-d);font-weight:500;font-size:1.05rem;letter-spacing:.05em;
   margin-bottom:10px;color:var(--anth)}
 .card-body h3 i{font-style:normal;color:var(--teal);margin-right:6px}
 .card-body p{color:var(--muted);font-size:.9rem;line-height:1.6;flex:1}
@@ -190,7 +187,6 @@ h1 .accent{color:var(--teal)}
 .meta{display:flex;align-items:center;gap:8px;font-size:.68rem;font-weight:700;letter-spacing:.14em;
   text-transform:uppercase;color:var(--muted-2)}
 
-/* pulsante stile console (PlayStation-like) */
 .ps-btn{display:inline-flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;
   border:1px solid var(--line);border-radius:999px;background:var(--surface-2);
   font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--anth);
@@ -223,7 +219,6 @@ h1 .accent{color:var(--teal)}
 .bar i{display:block;height:100%;width:40%;background:var(--teal);border-radius:99px;animation:load 2.4s ease-in-out infinite}
 @keyframes load{0%{transform:translateX(-110%)}100%{transform:translateX(400%)}}
 
-/* suggerimento comandi */
 .hint-row{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:30px 0 6px;
   font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2)}
 .hint-row .k{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 6px;
@@ -317,9 +312,9 @@ footer{margin-top:64px;border-top:1px solid var(--line);background:var(--surface
       <h1 id="title">PIAZZA <span class="accent">DIGITALE</span></h1>
     </div>
     <div>
-      <p>Un unico spazio per tutti i moduli del sistema Pistone. Scegli una scheda e premi <b>✕</b> per entrare.</p>
+      <p>Le <b>quattro divisioni</b> del gruppo Pistone riunite in un unico spazio. Scegli una scheda e premi <b>✕</b> per entrare nel mondo corrispondente.</p>
       <div class="intro-meta">
-        <span class="pill"><b>6</b> pagine attive</span>
+        <span class="pill"><b>4</b> divisioni attive</span>
         <span class="pill">Build <b>2026.01</b></span>
         <span class="pill">Hosting <b>GitHub</b></span>
       </div>
@@ -327,137 +322,104 @@ footer{margin-top:64px;border-top:1px solid var(--line);background:var(--surface
   </section>
 
   <!-- ================================================================
-       SCHEDE — ⚠️ LINK GITHUB da aggiornare:
-       Link1 già impostato → https://newsalvog-cmyk.github.io/prezzi/
-       Sostituisci Link2..Link6 con i tuoi URL
+       SCHEDE — LINK GITHUB già configurati:
+       1. Digitale     → /prezzi/         (in evidenza)
+       2. Litografia   → /litografia/
+       3. Abbigliamento → /abbigliamento/
+       4. Plotter      → /plotter/
        ================================================================ -->
   <section class="grid" id="grid">
 
-    <!-- SCHEDA 01 · IN EVIDENZA — Prezzi (link reale) -->
+    <!-- SCHEDA 01 · IN EVIDENZA — DIGITALE -->
     <a class="card card--wide" href="https://newsalvog-cmyk.github.io/prezzi/" style="--d:.05s">
       <div class="card-media">
-        <!-- ⚠️ foto digitale.png caricata su GitHub Pages -->
-        <img src="digitale.png" alt="Digitale — Prezzi Pistone" onerror="this.src='https://picsum.photos/seed/pistone-prezzi/1200/560'">
+        <img src="digitale.png" alt="Digitale — stampa e comunicazione visiva"
+             onerror="this.src='https://picsum.photos/seed/pistone-digitale/1200/560'">
         <div class="veil"></div>
-        <span class="chip">Principale</span>
+        <span class="chip">Divisione 01</span>
         <span class="idx">01</span>
         <span class="premi">✕ &nbsp;APRI</span>
       </div>
       <div class="card-body">
-        <h3><i>△</i>Prezzi</h3>
-        <p>Il listino completo dei servizi e delle soluzioni Pistone: pacchetti, configurazioni e piani personalizzati per ogni esigenza professionale. Il punto di partenza della Piazza.</p>
+        <h3><i>△</i>Digitale</h3>
+        <p>La divisione tecnologica del gruppo: stampa digitale di alta qualità, comunicazione visiva, grafica e supporti multimediali. La velocità del futuro applicata a ogni progetto, dal biglietto da visita alla grande campagna.</p>
         <div class="stats">
-          <div><b>12</b><span>Servizi</span></div>
-          <div><b>Live</b><span>Sync</span></div>
-          <div><b>v0.1</b><span>Build</span></div>
+          <div><b>Alta</b><span>Risoluzione</span></div>
+          <div><b>Rapida</b><span>Consegna</span></div>
+          <div><b>CMYK+</b><span>Color Gamut</span></div>
         </div>
         <div class="card-foot">
-          <span class="meta"><span class="dot"></span>Aggiornata 2026</span>
+          <span class="meta"><span class="dot"></span>Listino completo</span>
           <span class="ps-btn"><span class="sym">✕</span>Avvia</span>
         </div>
       </div>
     </a>
 
-    <!-- SCHEDA 02 → href="Link2" -->
-    <a class="card" href="Link2" style="--d:.12s">
+    <!-- SCHEDA 02 — LITOGRAFIA -->
+    <a class="card" href="https://newsalvog-cmyk.github.io/litografia/" style="--d:.12s">
       <div class="card-media">
-        <img src="https://picsum.photos/seed/pistone-progetti/800/450" alt="Progetti">
+        <img src="litografia.png" alt="Litografia — stampa offset tradizionale"
+             onerror="this.src='https://picsum.photos/seed/pistone-litografia/800/450'">
         <div class="veil"></div>
-        <span class="chip">Portfolio</span>
+        <span class="chip">Divisione 02</span>
         <span class="idx">02</span>
         <span class="premi">✕ &nbsp;APRI</span>
       </div>
       <div class="card-body">
-        <h3><i>○</i>Progetti</h3>
-        <p>Vetrina dei lavori realizzati: casi studio, prototipi e applicazioni sviluppate dal team.</p>
+        <h3><i>○</i>Litografia</h3>
+        <p>La tradizione dell'offset al servizio della precisione: cataloghi, riviste, packaging e grandi tirature con la qualità artigianale che solo la stampa tipografica sa garantire.</p>
         <div class="card-foot">
-          <span class="meta"><span class="dot"></span>8 pubblicati</span>
+          <span class="meta"><span class="dot"></span>Alte tirature</span>
           <span class="ps-btn"><span class="sym">✕</span>Avvia</span>
         </div>
       </div>
     </a>
 
-    <!-- SCHEDA 03 → href="Link3" -->
-    <a class="card" href="Link3" style="--d:.19s">
+    <!-- SCHEDA 03 — ABBIGLIAMENTO -->
+    <a class="card" href="https://newsalvog-cmyk.github.io/abbigliamento/" style="--d:.19s">
       <div class="card-media">
-        <img src="https://picsum.photos/seed/pistone-documenti/800/450" alt="Documentazione">
+        <img src="abbigliamento.png" alt="Abbigliamento — stampa su tessuti"
+             onerror="this.src='https://picsum.photos/seed/pistone-abbigliamento/800/450'">
         <div class="veil"></div>
-        <span class="chip">Wiki</span>
+        <span class="chip">Divisione 03</span>
         <span class="idx">03</span>
         <span class="premi">✕ &nbsp;APRI</span>
       </div>
       <div class="card-body">
-        <h3><i>□</i>Documentazione</h3>
-        <p>Guide, specifiche tecniche e manuali d'uso. Tutto il sapere tecnico, ordinato e ricercabile.</p>
+        <h3><i>✕</i>Abbigliamento</h3>
+        <p>Personalizzazione e stampa su tessuti: capi coordinati, merchandising aziendale, divise e capi su misura. Serigrafia, DTF e ricamo per ogni stile e volume.</p>
         <div class="card-foot">
-          <span class="meta"><span class="dot"></span>Sempre attiva</span>
+          <span class="meta"><span class="dot"></span>Custom & Brand</span>
           <span class="ps-btn"><span class="sym">✕</span>Avvia</span>
         </div>
       </div>
     </a>
 
-    <!-- SCHEDA 04 → href="Link4" -->
-    <a class="card" href="Link4" style="--d:.26s">
+    <!-- SCHEDA 04 — PLOTTER -->
+    <a class="card" href="https://newsalvog-cmyk.github.io/plotter/" style="--d:.26s">
       <div class="card-media">
-        <img src="https://picsum.photos/seed/pistone-release/800/450" alt="Download">
+        <img src="plotter.png" alt="Plotter — stampa grande formato"
+             onerror="this.src='https://picsum.photos/seed/pistone-plotter/800/450'">
         <div class="veil"></div>
-        <span class="chip">Release</span>
+        <span class="chip">Divisione 04</span>
         <span class="idx">04</span>
         <span class="premi">✕ &nbsp;APRI</span>
       </div>
       <div class="card-body">
-        <h3><i>✕</i>Download</h3>
-        <p>Archivio delle release: versioni stabili, changelog e pacchetti pronti da scaricare.</p>
+        <h3><i>□</i>Plotter</h3>
+        <p>Grande formato senza limiti: banner, insegne, adesivi, car wrapping e allestimenti fieristici. Tecnologia di ultima generazione per comunicazioni visive di impatto.</p>
         <div class="card-foot">
-          <span class="meta"><span class="dot"></span>Ultima: 0.1</span>
+          <span class="meta"><span class="dot"></span>XL / XXL</span>
           <span class="ps-btn"><span class="sym">✕</span>Avvia</span>
         </div>
       </div>
     </a>
 
-    <!-- SCHEDA 05 → href="Link5" -->
-    <a class="card" href="Link5" style="--d:.33s">
-      <div class="card-media">
-        <img src="https://picsum.photos/seed/pistone-supporto/800/450" alt="Supporto">
-        <div class="veil"></div>
-        <span class="chip">Help</span>
-        <span class="idx">05</span>
-        <span class="premi">✕ &nbsp;APRI</span>
-      </div>
-      <div class="card-body">
-        <h3><i>△</i>Supporto</h3>
-        <p>Segnalazioni, FAQ e assistenza diretta. Apri un ticket e segui lo stato della richiesta.</p>
-        <div class="card-foot">
-          <span class="meta"><span class="dot"></span>Risposta &lt; 24h</span>
-          <span class="ps-btn"><span class="sym">✕</span>Avvia</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- SCHEDA 06 → href="Link6" -->
-    <a class="card" href="Link6" style="--d:.4s">
-      <div class="card-media">
-        <img src="https://picsum.photos/seed/pistone-contatti/800/450" alt="Contatti">
-        <div class="veil"></div>
-        <span class="chip">Info</span>
-        <span class="idx">06</span>
-        <span class="premi">✕ &nbsp;APRI</span>
-      </div>
-      <div class="card-body">
-        <h3><i>○</i>Contatti</h3>
-        <p>Recapiti, sedi e canali ufficiali per collaborazioni e richieste commerciali.</p>
-        <div class="card-foot">
-          <span class="meta"><span class="dot"></span>Lun – Ven</span>
-          <span class="ps-btn"><span class="sym">✕</span>Avvia</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- TESSERA SEGNAPOSTO -->
-    <div class="card card--teaser" style="--d:.47s">
+    <!-- TESSERA SEGNAPOSTO: prossima divisione -->
+    <div class="card card--teaser" style="--d:.33s">
       <span class="big">◇</span>
-      <h4>Nuova pagina</h4>
-      <p>Un nuovo modulo è in fase di caricamento.</p>
+      <h4>Prossima divisione</h4>
+      <p>Un nuovo servizio Pistone è in fase di sviluppo.</p>
       <div class="bar"><i></i></div>
     </div>
   </section>
@@ -465,15 +427,15 @@ footer{margin-top:64px;border-top:1px solid var(--line);background:var(--surface
   <div class="hint-row" aria-hidden="true">
     <span><span class="k">←</span><span class="k">→</span>Naviga</span>
     <span><span class="k t">✕</span>Invio per aprire</span>
-    <span><span class="k">△</span>6 destinazioni</span>
+    <span><span class="k">△</span>4 divisioni</span>
   </div>
 </main>
 
 <!-- ================= TICKER ================= -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>PIAZZA <i>✕</i> PREZZI <i>△</i> PROGETTI <i>△</i> DOCUMENTAZIONE <i>○</i> RELEASE <i>□</i> SUPPORTO <i>✕</i> CONTATTI <i>△</i></span>
-    <span>PIAZZA <i>✕</i> PREZZI <i>△</i> PROGETTI <i>△</i> DOCUMENTAZIONE <i>○</i> RELEASE <i>□</i> SUPPORTO <i>✕</i> CONTATTI <i>△</i></span>
+    <span>PIAZZA <i>✕</i> DIGITALE <i>△</i> LITOGRAFIA <i>○</i> ABBIGLIAMENTO <i>✕</i> PLOTTER <i>□</i> PISTONE SRLS <i>◇</i> BUILD 2026.01 <i>△</i></span>
+    <span>PIAZZA <i>✕</i> DIGITALE <i>△</i> LITOGRAFIA <i>○</i> ABBIGLIAMENTO <i>✕</i> PLOTTER <i>□</i> PISTONE SRLS <i>◇</i> BUILD 2026.01 <i>△</i></span>
   </div>
 </div>
 
@@ -489,22 +451,23 @@ footer{margin-top:64px;border-top:1px solid var(--line);background:var(--surface
           <span><span class="brand-name">PISTONE<em>.</em></span>
           <span class="brand-sub">Piazza digitale</span></span>
         </a>
-        <p>Punto d'accesso unico alle pagine del sistema. Design, sviluppo e distribuzione a cura del team interno.</p>
+        <p>Punto d'accesso unico alle quattro divisioni del gruppo Pistone: stampa, tessuti e comunicazione visiva, da oltre trent'anni.</p>
       </div>
       <div>
-        <h5>Esplora</h5>
+        <h5>Divisioni</h5>
         <ul>
-          <li><a href="https://newsalvog-cmyk.github.io/prezzi/">Prezzi</a></li>
-          <li><a href="Link2">Progetti</a></li>
-          <li><a href="Link3">Documentazione</a></li>
+          <li><a href="https://newsalvog-cmyk.github.io/prezzi/">△ Digitale</a></li>
+          <li><a href="https://newsalvog-cmyk.github.io/litografia/">○ Litografia</a></li>
+          <li><a href="https://newsalvog-cmyk.github.io/abbigliamento/">✕ Abbigliamento</a></li>
+          <li><a href="https://newsalvog-cmyk.github.io/plotter/">□ Plotter</a></li>
         </ul>
       </div>
       <div>
-        <h5>Risorse</h5>
+        <h5>Servizi</h5>
         <ul>
-          <li><a href="Link4">Release & Download</a></li>
-          <li><a href="Link5">Supporto</a></li>
-          <li><a href="Link6">Contatti</a></li>
+          <li><a href="https://newsalvog-cmyk.github.io/prezzi/">Listino prezzi</a></li>
+          <li><a href="https://newsalvog-cmyk.github.io/prezzi/">Preventivi</a></li>
+          <li><a href="https://newsalvog-cmyk.github.io/prezzi/">Assistenza</a></li>
         </ul>
       </div>
       <div>
@@ -536,7 +499,7 @@ function clock(){
 }
 clock(); setInterval(clock,1000);
 
-/* ---- Titolo: effetto decodifica con i simboli console ---- */
+/* ---- Titolo: effetto decodifica ---- */
 (function(){
   const el = document.getElementById('title');
   if(reduced) return;
